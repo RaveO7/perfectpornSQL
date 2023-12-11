@@ -3,7 +3,7 @@ import { Dispatch, SetStateAction } from "react"
 /* Home Page */
 
 export async function getPageData(page: any, valueMenu: any, setDataVideo: any) {
-    const apiUrlEndpoint = "/api/getAllSelected"
+    const apiUrlEndpoint = process.env.DATABASE_Host + "/api/getAllSelected"
 
     const postData: any = {
         method: "POST",
@@ -21,7 +21,7 @@ export async function getPageData(page: any, valueMenu: any, setDataVideo: any) 
 }
 
 export async function getNumberPage(setNumberPage: any) {
-    const apiUrlEndpoint = "/api/getNumberPage"
+    const apiUrlEndpoint = process.env.DATABASE_Host + "/api/getNumberPage"
 
     const response = await fetch(apiUrlEndpoint)
     const res = await response.json()
@@ -32,7 +32,7 @@ export async function getNumberPage(setNumberPage: any) {
 /* Page Video */
 
 export async function getVideoSelected(id: any, setDataVideo: any, setLoading: any) {
-    const apiUrlEndpoint = "/api/getVideoById"
+    const apiUrlEndpoint = process.env.DATABASE_Host + "/api/getVideoById"
 
     const postData: any = {
         method: "POST",
@@ -49,7 +49,7 @@ export async function getVideoSelected(id: any, setDataVideo: any, setLoading: a
 }
 
 export async function getNumberVideoByChannel(id: any, setDataNbrVideo: { (arg0: any): void; setDataNbrVideo?: Dispatch<SetStateAction<never[]>> }) {
-    const apiUrlEndpoint = "/api/getNumberVideoChaine"
+    const apiUrlEndpoint = process.env.DATABASE_Host + "/api/getNumberVideoChaine"
 
     const postData: any = {
         method: "POST",
@@ -66,7 +66,7 @@ export async function getNumberVideoByChannel(id: any, setDataNbrVideo: { (arg0:
 
 export async function getMoreVideo(id: any, chaine: string, setDataMoreVideo: Dispatch<SetStateAction<never[]>>) {
     if (chaine && id) {
-        const apiUrlEndpoint = "/api/getMoreVideo"
+        const apiUrlEndpoint = process.env.DATABASE_Host + "/api/getMoreVideo"
 
         const postData: any = {
             method: "POST",
@@ -86,7 +86,7 @@ export async function getMoreVideo(id: any, chaine: string, setDataMoreVideo: Di
 /* Search Page */
 
 export async function getSearchDataVideos(valueMenu: any, pageSearch: any, search: any, nbrPage: any, setDataVideo: any) {
-    const apiUrlEndpoint = "/api/getSearchVideos"
+    const apiUrlEndpoint = process.env.DATABASE_Host + "/api/getSearchVideos"
     const postData: any = {
         method: "POST",
         header: { "Content-Type": "application/json" },
@@ -104,7 +104,7 @@ export async function getSearchDataVideos(valueMenu: any, pageSearch: any, searc
 }
 
 export async function getSearchNumberPage(setNumberPage: any) {
-    const apiUrlEndpoint = "/api/getNumberPage"
+    const apiUrlEndpoint = process.env.DATABASE_Host + "/api/getNumberPage"
 
     const response = await fetch(apiUrlEndpoint)
     const res = await response.json()
@@ -115,7 +115,7 @@ export async function getSearchNumberPage(setNumberPage: any) {
 /* Type Page */
 
 export async function getSelectedAllNameByType(pageType: any, actualPageNbr: any, setDataResponse: any, setNumberPage: any) {
-    const apiUrlEndpoint = "/api/getDataSelectedTest"
+    const apiUrlEndpoint = process.env.DATABASE_Host + "/api/getDataSelectedTest"
 
     const postData: any = {
         method: "POST",
@@ -136,7 +136,7 @@ export async function getSelectedAllNameByType(pageType: any, actualPageNbr: any
 /* Name Page */
 
 export async function getSelectedAllVideoByName(pageType: any, nomGroupe: any, actualPageNbr: any, setDataResponse: any, setNumberPage: any) {
-    const apiUrlEndpoint = "/api/getDataSelectedByTest"
+    const apiUrlEndpoint = process.env.DATABASE_Host + "/api/getDataSelectedByTest"
 
     const postData: any = {
         method: "POST",
